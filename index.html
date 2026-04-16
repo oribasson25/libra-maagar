@@ -56,7 +56,7 @@ mark{background:#ffd703;color:#1c1c1c;padding:0.05rem 0.2rem;border-radius:0.15r
     <img src="libra-logo.png" alt="Libra logo">
     <span>Libra</span>
   </div>
-  <a href="צמדים מעודכן25.2.xlsx" class="excel-btn" download="צמדים מעודכן25.2.xlsx">📊 צמדים מעודכנים</a>
+  <button class="excel-btn" onclick="forceDownloadExcel()">📊 צמדים מעודכנים</button>
 </div>
 <div class="layout">
 <nav class="sidebar" style="display:none"></nav>
@@ -105,6 +105,20 @@ mark{background:#ffd703;color:#1c1c1c;padding:0.05rem 0.2rem;border-radius:0.15r
       if(!_agentLoaded){p.innerHTML='<iframe src="https://8legs.vercel.app/api/widget/441a1b63-5896-4305-9458-8f1c4118480e?title=libra-chat&accent=%23ffd703&placeholder=Type+a+message%E2%80%A6&height=673" allow="microphone"></iframe>';_agentLoaded=true}
       p.style.display='block';i.innerHTML='✕';
     }else{p.style.display='none';i.innerHTML=_agentIcon}
+  }
+  function forceDownloadExcel(){
+    fetch('צמדים מעודכן25.2.xlsx')
+      .then(r=>r.blob())
+      .then(blob=>{
+        const url=URL.createObjectURL(blob);
+        const a=document.createElement('a');
+        a.href=url;
+        a.download='צמדים מעודכן25.2.xlsx';
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+        URL.revokeObjectURL(url);
+      });
   }
 </script>
  <div id="searchResults" class="search-results found">מציג תוכן לcar</div>
