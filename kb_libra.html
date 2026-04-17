@@ -73,9 +73,9 @@ mark{background:#ffd703;color:#1c1c1c;padding:0.05rem 0.2rem;border-radius:0.15r
 <style>
   #_agentbtn{position:fixed;bottom:24px;right:24px;width:56px;height:56px;border-radius:50%;background:#000000;border:none;cursor:pointer;box-shadow:0 4px 16px rgba(0,0,0,0.25);font-size:26px;display:flex;align-items:center;justify-content:center;z-index:9998;transition:transform .2s}
   #_agentbtn:hover{transform:scale(1.08)}
-  #_agentpanel{position:fixed;bottom:calc(env(safe-area-inset-bottom, 0px) + 16px);right:16px;width:320px;max-width:calc(100vw - 32px);height:200px;max-height:calc(100vh - 120px);border-radius:16px;box-shadow:0 8px 32px rgba(0,0,0,0.22);overflow:hidden;z-index:9997;display:none;border:none}
-  #_agentpanel iframe{width:100%;height:100%;border:none;display:block}
-  @media(max-width:440px){#_agentpanel{width:calc(100vw - 32px);max-width:280px;right:16px;bottom:calc(env(safe-area-inset-bottom, 0px) + 16px);height:180px;}}
+  #_agentpanel{position:fixed;bottom:calc(env(safe-area-inset-bottom, 0px) + 16px);right:12px;width:min(280px,calc(100vw - 24px));height:200px;max-height:calc(100vh - 120px);border-radius:16px;box-shadow:0 8px 32px rgba(0,0,0,0.22);overflow:hidden;z-index:9997;display:none;border:none}
+  #_agentpanel iframe{width:100%;height:100%;max-width:100%;min-width:0;border:none;display:block}
+  @media(max-width:440px){#_agentpanel{width:min(260px,calc(100vw - 24px));right:12px;bottom:calc(env(safe-area-inset-bottom, 0px) + 12px);height:180px;}}
 </style>
 <div id="_agentpanel"></div>
 <script>
