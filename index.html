@@ -47,26 +47,8 @@ mark{background:#ffd703;color:#1c1c1c;padding:0.05rem 0.2rem;border-radius:0.15r
 .edit-toolbar button{padding:0.25rem 0.5rem;border:1px solid #ccc;border-radius:0.25rem;background:#fff;cursor:pointer;font-size:0.8rem}
 .edit-toolbar button:hover{background:#ffd703}
 .edit-toolbar input[type="color"]{width:30px;height:30px;border:none;border-radius:0.25rem;cursor:pointer}
-.edit-btn{background:#ffd703;color:#1c1c1c;border:none;border-radius:0.25rem;padding:0.25rem 0.5rem;font-size:0.8rem;cursor:pointer;margin-left:auto;display:none}
+.edit-btn{background:#ffd703;color:#1c1c1c;border:none;border-radius:0.25rem;padding:0.25rem 0.5rem;font-size:0.8rem;cursor:pointer;margin-left:auto}
 .edit-btn:hover{background:#ffcb00}
-.lock-btn{background:transparent;color:#1c1c1c;border:2px solid #1c1c1c;border-radius:0.5rem;padding:0.4rem 0.9rem;font-weight:700;cursor:pointer;font-size:0.9rem;transition:all .2s}
-.lock-btn:hover{background:#1c1c1c;color:#ffd703}
-.edit-modal-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.5);z-index:1000;align-items:center;justify-content:center}
-.edit-modal{background:#fff;border-radius:1rem;padding:2rem;width:320px;box-shadow:0 8px 32px rgba(0,0,0,0.2);text-align:center}
-.edit-modal h3{font-size:1.2rem;margin-bottom:1rem;color:#1a1a2e}
-.edit-modal input{width:100%;padding:0.7rem 1rem;border:2px solid #e5e7eb;border-radius:0.5rem;font-size:1rem;outline:none;margin-bottom:0.5rem;direction:ltr}
-.edit-modal input:focus{border-color:#ffd703}
-.edit-modal-error{color:#e53e3e;font-size:0.85rem;margin-bottom:0.75rem;display:none}
-.edit-modal-btns{display:flex;gap:0.5rem;justify-content:center;margin-top:0.5rem}
-.edit-modal-btns button{padding:0.5rem 1.2rem;border:none;border-radius:0.5rem;font-weight:700;cursor:pointer;font-size:0.95rem}
-.edit-modal-confirm{background:#ffd703;color:#1c1c1c}
-.edit-modal-confirm:hover{background:#ffcb00}
-.edit-modal-cancel{background:#e5e7eb;color:#444}
-.edit-modal-cancel:hover{background:#d1d5db}
-.edit-modal input,.edit-modal select{width:100%;padding:0.7rem 1rem;border:2px solid #e5e7eb;border-radius:0.5rem;font-size:1rem;outline:none;margin-bottom:0.75rem;direction:rtl}
-.edit-modal input:focus,.edit-modal select:focus{border-color:#ffd703}
-.add-topic-btn{position:fixed;bottom:2rem;left:2rem;background:#ffd703;color:#1c1c1c;border:none;border-radius:2rem;padding:0.75rem 1.5rem;font-weight:700;font-size:1rem;cursor:pointer;box-shadow:0 4px 16px rgba(0,0,0,0.15);z-index:100;transition:all .2s;display:none}
-.add-topic-btn:hover{background:#ffcb00;transform:translateY(-2px)}
 @media(max-width:768px){.main{padding:1.25rem 1rem}.hero h1{font-size:1.5rem}.searchbox input{width:100%}.categories{grid-template-columns:1fr}.category-card{min-height:80px;padding:0.75rem;text-align:center}.topbar .logo{font-size:1.8rem}.topbar .menu{font-size:0.9rem}.details-container{margin-top:1rem}.body{font-size:0.9rem}}</style>
 </head>
 <body>
@@ -76,38 +58,6 @@ mark{background:#ffd703;color:#1c1c1c;padding:0.05rem 0.2rem;border-radius:0.15r
     <span>Libra</span>
   </div>
   <button class="excel-btn" onclick="forceDownloadExcel()">📊 צמדים מעודכנים</button>
-  <button class="lock-btn" id="edit-lock-btn" onclick="showEditModal()">🔒 עריכה</button>
-</div>
-
-<button id="add-topic-btn" class="add-topic-btn" onclick="showAddTopicModal()">＋ הוסף נושא</button>
-
-<div class="edit-modal-overlay" id="add-topic-modal" onclick="if(event.target===this)closeAddTopicModal()">
-  <div class="edit-modal">
-    <h3>➕ הוסף נושא חדש</h3>
-    <input type="text" id="new-topic-title" placeholder="כותרת הנושא..." onkeydown="if(event.key==='Enter')addNewTopic()">
-    <select id="new-topic-cat">
-      <option value="car">🚗 רכב</option>
-      <option value="home">🏠 בית</option>
-      <option value="pets">🐶 חיות מחמד</option>
-      <option value="travel">✈️ נסיעות</option>
-    </select>
-    <div class="edit-modal-btns">
-      <button class="edit-modal-confirm" onclick="addNewTopic()">הוסף</button>
-      <button class="edit-modal-cancel" onclick="closeAddTopicModal()">ביטול</button>
-    </div>
-  </div>
-</div>
-
-<div class="edit-modal-overlay" id="edit-modal" onclick="if(event.target===this)closeEditModal()">
-  <div class="edit-modal">
-    <h3>🔒 הזן סיסמה לעריכה</h3>
-    <input type="password" id="edit-password-input" placeholder="סיסמה..." onkeydown="if(event.key==='Enter')checkEditPassword()">
-    <div class="edit-modal-error" id="edit-password-error">סיסמה שגויה, נסה שוב.</div>
-    <div class="edit-modal-btns">
-      <button class="edit-modal-confirm" onclick="checkEditPassword()">כניסה</button>
-      <button class="edit-modal-cancel" onclick="closeEditModal()">ביטול</button>
-    </div>
-  </div>
 </div>
 <div class="layout">
 <nav class="sidebar" style="display:none"></nav>
@@ -246,18 +196,6 @@ mark{background:#ffd703;color:#1c1c1c;padding:0.05rem 0.2rem;border-radius:0.15r
   }
   // initialize full view under default category
   selectCategory(currentCategory);
-  function addEditButtons(){
-    document.querySelectorAll('details').forEach(function(d){
-      var body = d.querySelector('.body');
-      if(body && !body.querySelector('.edit-btn')){
-        var btn = document.createElement('button');
-        btn.className = 'edit-btn';
-        btn.textContent = 'ערוך';
-        btn.onclick = function(){ toggleEdit(this); };
-        body.appendChild(btn);
-      }
-    });
-  }
   window.addEventListener('load', function(){
     document.querySelectorAll('details').forEach(function(d){
       var saved = localStorage.getItem(d.id);
@@ -265,81 +203,7 @@ mark{background:#ffd703;color:#1c1c1c;padding:0.05rem 0.2rem;border-radius:0.15r
         d.querySelector('.body').innerHTML = saved;
       }
     });
-    addEditButtons();
   });
-  var EDIT_PASSWORD = 'libra2024';
-  var editUnlocked = false;
-  function showEditModal(){
-    if(editUnlocked){ lockEdit(); return; }
-    document.getElementById('edit-modal').style.display = 'flex';
-    document.getElementById('edit-password-input').value = '';
-    document.getElementById('edit-password-error').style.display = 'none';
-    setTimeout(function(){ document.getElementById('edit-password-input').focus(); }, 50);
-  }
-  function closeEditModal(){
-    document.getElementById('edit-modal').style.display = 'none';
-  }
-  function checkEditPassword(){
-    var input = document.getElementById('edit-password-input').value;
-    if(input === EDIT_PASSWORD){
-      editUnlocked = true;
-      closeEditModal();
-      document.querySelectorAll('.edit-btn').forEach(function(btn){ btn.style.display = 'inline-block'; });
-      document.getElementById('add-topic-btn').style.display = 'block';
-      document.getElementById('edit-lock-btn').textContent = '🔓 עריכה';
-    } else {
-      document.getElementById('edit-password-error').style.display = 'block';
-      document.getElementById('edit-password-input').value = '';
-      document.getElementById('edit-password-input').focus();
-    }
-  }
-  function lockEdit(){
-    editUnlocked = false;
-    document.querySelectorAll('.edit-btn').forEach(function(btn){ btn.style.display = 'none'; });
-    document.getElementById('add-topic-btn').style.display = 'none';
-    document.getElementById('edit-lock-btn').textContent = '🔒 עריכה';
-  }
-  function showAddTopicModal(){
-    document.getElementById('add-topic-modal').style.display = 'flex';
-    document.getElementById('new-topic-title').value = '';
-    setTimeout(function(){ document.getElementById('new-topic-title').focus(); }, 50);
-  }
-  function closeAddTopicModal(){
-    document.getElementById('add-topic-modal').style.display = 'none';
-  }
-  function addNewTopic(){
-    var title = document.getElementById('new-topic-title').value.trim();
-    var cat = document.getElementById('new-topic-cat').value;
-    if(!title) return;
-    var existing = Array.from(document.querySelectorAll('details[id]')).map(function(d){ return d.id; });
-    var num = 1;
-    while(existing.indexOf('s'+num) !== -1) num++;
-    var id = 's' + num;
-    var d = document.createElement('details');
-    d.id = id;
-    d.setAttribute('data-cat', cat);
-    d.innerHTML = '<summary><span style="font-weight:700">' + title + '</span></summary>' +
-      '<div class="body">' +
-      '<div class="edit-toolbar" style="display:none;">' +
-      '<button onclick="execCmd(this,\'bold\')">B</button>' +
-      '<button onclick="execCmd(this,\'italic\')">I</button>' +
-      '<button onclick="execCmd(this,\'underline\')">U</button>' +
-      '<input type="color" onchange="execCmd(this,\'foreColor\',this.value)">' +
-      '</div>' +
-      '<p>הוסף תוכן כאן...</p>' +
-      '</div>';
-    var editBtn = document.createElement('button');
-    editBtn.className = 'edit-btn';
-    editBtn.textContent = 'ערוך';
-    editBtn.style.display = 'inline-block';
-    editBtn.onclick = function(){ toggleEdit(this); };
-    d.querySelector('.body').appendChild(editBtn);
-    document.querySelector('main.main').appendChild(d);
-    d.open = true;
-    d.scrollIntoView({behavior:'smooth'});
-    closeAddTopicModal();
-    selectCategory(currentCategory);
-  }
   function toggleEdit(btn){
     var details = btn.closest('details');
     var body = details.querySelector('.body');
@@ -348,12 +212,7 @@ mark{background:#ffd703;color:#1c1c1c;padding:0.05rem 0.2rem;border-radius:0.15r
       body.contentEditable = 'false';
       toolbar.style.display = 'none';
       btn.textContent = 'ערוך';
-      // שמור ב-localStorage ללא כפתור העריכה
-      var editBtn = body.querySelector('.edit-btn');
-      if(editBtn) editBtn.remove();
       localStorage.setItem(details.id, body.innerHTML);
-      body.appendChild(btn);
-      // שמור לקובץ אם נבחרה תיקייה
       saveToFile();
     } else {
       body.contentEditable = 'true';
