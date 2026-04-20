@@ -49,15 +49,6 @@ mark{background:#ffd703;color:#1c1c1c;padding:0.05rem 0.2rem;border-radius:0.15r
 .edit-btn{background:#ffd703;color:#1c1c1c;border:none;border-radius:0.25rem;padding:0.25rem 0.5rem;font-size:0.8rem;cursor:pointer;margin-left:auto}
 .edit-btn:hover{background:#ffcb00}
 @media(max-width:768px){.main{padding:1.25rem 1rem}.hero h1{font-size:1.5rem}.searchbox input{width:100%}.categories{grid-template-columns:1fr}.category-card{min-height:80px;padding:0.75rem;text-align:center}.topbar .logo{font-size:1.8rem}.topbar .menu{font-size:0.9rem}.details-container{margin-top:1rem}.body{font-size:0.9rem}}
-#loginOverlay{position:fixed;inset:0;background:rgba(0,0,0,0.6);z-index:99999;display:flex;align-items:center;justify-content:center}
-#loginBox{background:#fff;border-radius:1rem;padding:2rem 2.5rem;width:320px;max-width:92vw;box-shadow:0 8px 40px rgba(0,0,0,0.25);text-align:center}
-#loginBox h2{font-size:1.3rem;font-weight:800;color:#1c1c1c;margin-bottom:0.3rem}
-#loginBox p{color:#888;font-size:0.85rem;margin-bottom:1.25rem}
-#loginBox input{width:100%;padding:0.6rem 0.9rem;border:2px solid #e5e7eb;border-radius:0.5rem;font-size:0.93rem;margin-bottom:0.65rem;outline:none;direction:rtl;display:block}
-#loginBox input:focus{border-color:#ffd703}
-#loginSubmit{width:100%;padding:0.7rem;background:#ffd703;color:#1c1c1c;font-weight:800;font-size:1rem;border:none;border-radius:0.5rem;cursor:pointer;margin-top:0.1rem}
-#loginSubmit:hover{background:#ffcb00}
-#loginError{color:#e53e3e;font-size:0.82rem;margin-top:0.5rem;min-height:1.1rem}
 #userBadge{display:none;position:absolute;left:1rem;top:50%;transform:translateY(-50%);align-items:center;gap:0.5rem;font-size:0.85rem;font-weight:700;color:#1c1c1c}
 #logoutBtn{background:#1c1c1c;color:#ffd703;border:none;border-radius:0.25rem;padding:0.3rem 0.7rem;font-size:0.8rem;font-weight:700;cursor:pointer}
 #logoutBtn:hover{background:#333}
@@ -81,16 +72,13 @@ mark{background:#ffd703;color:#1c1c1c;padding:0.05rem 0.2rem;border-radius:0.15r
 </head>
 <body>
 
-<div id="loginOverlay">
-  <div id="loginBox">
-    <h2>מרכז הידע — Libra</h2>
-    <p>הזן שם משתמש וסיסמה להמשך</p>
-    <input type="text" id="loginUser" placeholder="שם משתמש">
-    <input type="password" id="loginPass" placeholder="סיסמה" onkeydown="if(event.key==='Enter')doLogin()">
-    <button id="loginSubmit" onclick="doLogin()">כניסה</button>
-    <div id="loginError"></div>
-  </div>
-</div>
+<script>
+  // redirect to login if no valid session
+  (function(){
+    var role = sessionStorage.getItem('kbRole');
+    if(!role) window.location.replace('login.html');
+  })();
+</script>
 
 <div id="addTopicModal">
   <div id="addTopicBox">
@@ -270,33 +258,9 @@ mark{background:#ffd703;color:#1c1c1c;padding:0.05rem 0.2rem;border-radius:0.15r
   selectCategory(currentCategory);
 
   // ===== AUTH =====
-  var USERS = {
-    'libra-admin': { password: 'libra2026', role: 'admin', label: 'מנהל' },
-    'libra':       { password: '1234',      role: 'viewer', label: 'צופה' }
-  };
-
-  function doLogin(){
-    var u = document.getElementById('loginUser').value.trim();
-    var p = document.getElementById('loginPass').value;
-    var acct = USERS[u];
-    if(acct && acct.password === p){
-      sessionStorage.setItem('kbRole', acct.role);
-      sessionStorage.setItem('kbLabel', acct.label);
-      document.getElementById('loginOverlay').style.display = 'none';
-      applyRole(acct.role, acct.label);
-    } else {
-      document.getElementById('loginError').textContent = 'שם משתמש או סיסמה שגויים';
-    }
-  }
-
   function doLogout(){
     sessionStorage.clear();
-    document.getElementById('loginOverlay').style.display = 'flex';
-    document.getElementById('loginUser').value = '';
-    document.getElementById('loginPass').value = '';
-    document.getElementById('loginError').textContent = '';
-    document.getElementById('userBadge').style.display = 'none';
-    applyRole(null);
+    window.location.replace('login.html');
   }
 
   function applyRole(role, label){
@@ -359,18 +323,10 @@ mark{background:#ffd703;color:#1c1c1c;padding:0.05rem 0.2rem;border-radius:0.15r
         d.querySelector('summary').appendChild(btn);
       }
     });
-    // check existing session (version-gated to clear stale sessions)
-    var SESSION_VER = 'v2';
-    if(sessionStorage.getItem('kbVer') !== SESSION_VER){
-      sessionStorage.clear();
-      sessionStorage.setItem('kbVer', SESSION_VER);
-    }
     var role = sessionStorage.getItem('kbRole');
     var lbl  = sessionStorage.getItem('kbLabel');
-    if(role){
-      document.getElementById('loginOverlay').style.display = 'none';
-      applyRole(role, lbl);
-    }
+    if(!role){ window.location.replace('login.html'); return; }
+    applyRole(role, lbl);
   });
   function toggleEdit(btn){
     var details = btn.closest('details');
