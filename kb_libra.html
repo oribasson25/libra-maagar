@@ -359,9 +359,14 @@ mark{background:#ffd703;color:#1c1c1c;padding:0.05rem 0.2rem;border-radius:0.15r
         d.querySelector('summary').appendChild(btn);
       }
     });
-    // check existing session
+    // check existing session (version-gated to clear stale sessions)
+    var SESSION_VER = 'v2';
+    if(sessionStorage.getItem('kbVer') !== SESSION_VER){
+      sessionStorage.clear();
+      sessionStorage.setItem('kbVer', SESSION_VER);
+    }
     var role = sessionStorage.getItem('kbRole');
-    var lbl = sessionStorage.getItem('kbLabel');
+    var lbl  = sessionStorage.getItem('kbLabel');
     if(role){
       document.getElementById('loginOverlay').style.display = 'none';
       applyRole(role, lbl);
