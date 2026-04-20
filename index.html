@@ -4,11 +4,11 @@
 <title>חוברת ידע — ליברה ביטוח</title>
 <style>*{margin:0;padding:0;box-sizing:border-box}
 body{font-family:system-ui,"Segoe UI",Arial,sans-serif;background:#f8f9fa;color:#1a1a2e;direction:rtl;line-height:1.6}
-.topbar{display:flex;align-items:center;justify-content:center;padding:1rem 2rem;background:#1c1c1c;border-bottom:2px solid #1c1c1c;position:sticky;top:0;z-index:20;box-shadow:0 2px 8px rgba(0,0,0,0.08)}
-.topbar .logo{font-weight:800;font-size:2.5rem;color:#ffffff;display:flex;align-items:center;gap:0.6rem}
+.topbar{display:flex;align-items:center;justify-content:center;padding:1rem 2rem;background:#ffd703;border-bottom:2px solid #ffd703;position:sticky;top:0;z-index:20;box-shadow:0 2px 8px rgba(0,0,0,0.08)}
+.topbar .logo{font-weight:800;font-size:2.5rem;color:#1c1c1c;display:flex;align-items:center;gap:0.6rem}
 .topbar .logo img{height:60px;width:auto;border-radius:6px}
 .topbar .menu{display:flex;align-items:center;gap:1rem;font-size:0.95rem}
-.topbar .menu a{color:#ffffff;text-decoration:none;font-weight:600}
+.topbar .menu a{color:#1c1c1c;text-decoration:none;font-weight:600}
 .topbar .excel-btn{background:#404040;color:#fff;border:none;border-radius:0.25rem;padding:0.5rem 1rem;font-weight:700;cursor:pointer;margin-left:0.5rem;text-decoration:none;display:inline-flex;align-items:center}
 .topbar .excel-btn:hover{background:#2a2a2a}
 .layout{display:block;min-height:100vh}
@@ -19,36 +19,36 @@ body{font-family:system-ui,"Segoe UI",Arial,sans-serif;background:#f8f9fa;color:
 .hero p{font-size:0.95rem;color:#666;margin-bottom:1.25rem}
 .searchbox{display:flex;align-items:center;justify-content:center;gap:0.5rem}
 .searchbox input{width:500px;max-width:100%;padding:0.75rem 1.1rem;border-radius:999px;border:2px solid #e5e7eb;font-size:0.95rem;color:#282828;outline:none;transition:all .2s}
-.searchbox input:focus{border-color:#1c1c1c;box-shadow:0 0 0 3px rgba(28,28,28,0.2)}
-.searchbox button{padding:0.75rem 1.25rem;border:none;border-radius:999px;background:#1c1c1c;color:#ffffff;font-weight:700;cursor:pointer;transition:all .2s}
-.searchbox button:hover{background:#333}
+.searchbox input:focus{border-color:#ffd703;box-shadow:0 0 0 3px rgba(255,215,3,0.2)}
+.searchbox button{padding:0.75rem 1.25rem;border:none;border-radius:999px;background:#ffd703;color:#1c1c1c;font-weight:700;cursor:pointer;transition:all .2s}
+.searchbox button:hover{background:#ffcb00}
 .search-results{margin-top:0.5rem;color:#666;font-size:0.88rem;text-align:center;min-height:1.2rem}
 .search-results.found{color:#1c1c1c;font-weight:700}
 .categories{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:0.75rem;margin-top:1.25rem}
 .category-card{background:#fff;border-radius:0.75rem;border:2px solid #e5e7eb;padding:1rem;text-align:center;transition:all .2s;cursor:pointer}
-.category-card:hover{border-color:#1c1c1c;transform:translateY(-2px)}
-.category-card.active{border-color:#1c1c1c;background:#f0f0f0}
+.category-card:hover{border-color:#ffd703;transform:translateY(-2px)}
+.category-card.active{border-color:#ffd703;background:#fffbeb}
 .category-card span{font-size:0.95rem;font-weight:700;color:#1c1c1c;display:block;margin-top:0.5rem}
 .category-card small{color:#888;font-size:0.8rem}
-.highlight{background:#1c1c1c;color:#ffffff;padding:0.05rem 0.3rem;border-radius:0.2rem}
+.highlight{background:#ffd703;color:#1c1c1c;padding:0.05rem 0.3rem;border-radius:0.2rem}
 .details-container{margin-top:1.5rem}
 details{margin-bottom:0.5rem;background:#fff;border-radius:0.75rem;border:1px solid #e5e7eb;overflow:hidden;transition:box-shadow .2s,border-color .2s}
 details:hover{box-shadow:0 4px 12px rgba(0,0,0,0.08)}
-details[open]{border-color:#1c1c1c;box-shadow:0 4px 16px rgba(28,28,28,0.15)}
+details[open]{border-color:#ffd703;box-shadow:0 4px 16px rgba(255,215,3,0.15)}
 summary{padding:1rem 1.25rem;font-size:0.97rem;font-weight:700;cursor:pointer;color:#1a1a2e;outline:none;list-style:none;display:flex;align-items:center;gap:0.5rem}
-summary:focus-visible{outline:2px solid #1c1c1c;outline-offset:-2px;border-radius:0.75rem}
+summary:focus-visible{outline:2px solid #ffd703;outline-offset:-2px;border-radius:0.75rem}
 summary::-webkit-details-marker{display:none}
-summary::before{content:"▶";color:#1c1c1c;font-size:0.75rem;transition:transform .25s;flex-shrink:0}
+summary::before{content:"▶";color:#ffd703;font-size:0.75rem;transition:transform .25s;flex-shrink:0}
 details[open] summary::before{transform:rotate(90deg)}
 .body{padding:1rem 1.25rem 1.25rem;border-top:1px solid #f0f0f0}
 .body p{color:#444;font-size:0.92rem;line-height:1.8;margin-bottom:0.5rem}
-mark{background:#1c1c1c;color:#ffffff;padding:0.05rem 0.2rem;border-radius:0.15rem}
+mark{background:#ffd703;color:#1c1c1c;padding:0.05rem 0.2rem;border-radius:0.15rem}
 .edit-toolbar{display:flex;gap:0.25rem;padding:0.5rem;background:#f8f9fa;border-bottom:1px solid #e5e7eb;margin-bottom:0.5rem}
 .edit-toolbar button{padding:0.25rem 0.5rem;border:1px solid #ccc;border-radius:0.25rem;background:#fff;cursor:pointer;font-size:0.8rem}
-.edit-toolbar button:hover{background:#1c1c1c;color:#fff}
+.edit-toolbar button:hover{background:#ffd703}
 .edit-toolbar input[type="color"]{width:30px;height:30px;border:none;border-radius:0.25rem;cursor:pointer}
-.edit-btn{background:#1c1c1c;color:#ffffff;border:none;border-radius:0.25rem;padding:0.25rem 0.5rem;font-size:0.8rem;cursor:pointer;margin-left:auto}
-.edit-btn:hover{background:#333}
+.edit-btn{background:#ffd703;color:#1c1c1c;border:none;border-radius:0.25rem;padding:0.25rem 0.5rem;font-size:0.8rem;cursor:pointer;margin-left:auto}
+.edit-btn:hover{background:#ffcb00}
 @media(max-width:768px){.main{padding:1.25rem 1rem}.hero h1{font-size:1.5rem}.searchbox input{width:100%}.categories{grid-template-columns:1fr}.category-card{min-height:80px;padding:0.75rem;text-align:center}.topbar .logo{font-size:1.8rem}.topbar .menu{font-size:0.9rem}.details-container{margin-top:1rem}.body{font-size:0.9rem}}</style>
 </head>
 <body>
@@ -482,7 +482,7 @@ minor-latin;mso-bidi-theme-font:minor-bidi">פוליסת <span style="background
 yellow;mso-highlight:yellow">מקיף</span> - אחריות מבוטחנו – <span style="color:#7030A0">נוהל פגעתי</span><o:p></o:p></span></u></b></p><p class="MsoNormal" dir="RTL"><span lang="HE" style="font-family:&quot;Arial&quot;,sans-serif;
 mso-ascii-font-family:Calibri;mso-ascii-theme-font:minor-latin;mso-hansi-font-family:
 Calibri;mso-hansi-theme-font:minor-latin;mso-bidi-theme-font:minor-bidi;
-background:none;mso-highlight:none">פוליסת <b>צ'יק ליברה</b> -</span><span lang="HE" style="font-family:&quot;Arial&quot;,sans-serif;mso-ascii-font-family:Calibri;
+background:yellow;mso-highlight:yellow">פוליסת <b>צ'יק ליברה</b> -</span><span lang="HE" style="font-family:&quot;Arial&quot;,sans-serif;mso-ascii-font-family:Calibri;
 mso-ascii-theme-font:minor-latin;mso-hansi-font-family:Calibri;mso-hansi-theme-font:
 minor-latin;mso-bidi-theme-font:minor-bidi"> <o:p></o:p></span></p><p class="MsoListParagraphCxSpFirst" dir="RTL" style="text-indent:-18.0pt;
 mso-list:l1 level1 lfo1"><!--[if !supportLists]-->1.<span style="font-variant-numeric: normal; font-variant-east-asian: normal; font-variant-alternates: normal; font-size-adjust: none; font-language-override: normal; font-kerning: auto; font-optical-sizing: auto; font-feature-settings: normal; font-variation-settings: normal; font-variant-position: normal; font-variant-emoji: normal; font-stretch: normal; font-size: 7pt; line-height: normal; font-family: &quot;Times New Roman&quot;;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><!--[endif]--><span dir="RTL"></span><span lang="HE" style="font-family:&quot;Arial&quot;,sans-serif;mso-ascii-font-family:
@@ -521,9 +521,9 @@ mso-list:l1 level1 lfo1"><!--[if !supportLists]-->8.<span style="font-variant-nu
 Calibri;mso-ascii-theme-font:minor-latin;mso-hansi-font-family:Calibri;
 mso-hansi-theme-font:minor-latin;mso-bidi-theme-font:minor-bidi">נעדכן מבוטח כי
 במידה ובדיקת החבות תאושר ונוכל לבצע הפניות למוסך ההשתתפות העצמית שלו תהיה:<br>
-<u>- מוסך הסדר: <span style="background:none;mso-highlight:none">1485</span>
+<u>- מוסך הסדר: <span style="background:yellow;mso-highlight:yellow">1485</span>
 ₪.<br>
-- מוסך פרטי: <span style="background:none;mso-highlight:none">3750</span> ₪
+- מוסך פרטי: <span style="background:yellow;mso-highlight:yellow">3750</span> ₪
 + 25% קיזוז מחשבונית תיקון.<br>
 -במידה והרכב לא לתיקון/מבוטח לא מעוניין לתקן את רכבו: <span style="background:
 yellow;mso-highlight:yellow">2250</span> ₪<br>
@@ -545,7 +545,7 @@ mso-hansi-theme-font:minor-latin;mso-bidi-theme-font:minor-bidi;color:#00B050">�
 להוציא הפניה לרכב חלופי גם אם עדיין לא אושרה בדיקת החבות של הצ'יק.</span><span dir="LTR" style="color:#00B050"><o:p></o:p></span></p><p class="MsoNormal" dir="RTL"><span lang="HE" style="font-family:&quot;Arial&quot;,sans-serif;
 mso-ascii-font-family:Calibri;mso-ascii-theme-font:minor-latin;mso-hansi-font-family:
 Calibri;mso-hansi-theme-font:minor-latin;mso-bidi-theme-font:minor-bidi;
-background:none;mso-highlight:none">פוליסת <b>צ'יק צ'יק –</b></span><b><span lang="HE" style="font-family:&quot;Arial&quot;,sans-serif;mso-ascii-font-family:Calibri;
+background:yellow;mso-highlight:yellow">פוליסת <b>צ'יק צ'יק –</b></span><b><span lang="HE" style="font-family:&quot;Arial&quot;,sans-serif;mso-ascii-font-family:Calibri;
 mso-ascii-theme-font:minor-latin;mso-hansi-font-family:Calibri;mso-hansi-theme-font:
 minor-latin;mso-bidi-theme-font:minor-bidi"> <o:p></o:p></span></b></p><p class="MsoListParagraphCxSpFirst" dir="RTL" style="text-indent:-18.0pt;
 mso-list:l2 level1 lfo2"><!--[if !supportLists]-->1.<span style="font-variant-numeric: normal; font-variant-east-asian: normal; font-variant-alternates: normal; font-size-adjust: none; font-language-override: normal; font-kerning: auto; font-optical-sizing: auto; font-feature-settings: normal; font-variation-settings: normal; font-variant-position: normal; font-variant-emoji: normal; font-stretch: normal; font-size: 7pt; line-height: normal; font-family: &quot;Times New Roman&quot;;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><!--[endif]--><span dir="RTL"></span><span lang="HE" style="font-family:&quot;Arial&quot;,sans-serif;mso-ascii-font-family:
@@ -587,9 +587,9 @@ mso-list:l2 level1 lfo2"><!--[if !supportLists]-->8.<span style="font-variant-nu
 Calibri;mso-ascii-theme-font:minor-latin;mso-hansi-font-family:Calibri;
 mso-hansi-theme-font:minor-latin;mso-bidi-theme-font:minor-bidi">נעדכן מבוטח כי
 במידה ובדיקת החבות תאושר ונוכל לבצע הפניות למוסך ההשתתפות העצמית שלו תהיה:<br>
-<u>- מוסך הסדר: <span style="background:none;mso-highlight:none">1500</span>
+<u>- מוסך הסדר: <span style="background:yellow;mso-highlight:yellow">1500</span>
 ₪.<br>
-- מוסך פרטי: <span style="background:none;mso-highlight:none">3750</span> ₪
+- מוסך פרטי: <span style="background:yellow;mso-highlight:yellow">3750</span> ₪
 + 25% קיזוז מחשבונית תיקון.</u><br>
 <u>במידה והרכב לא לתיקון/מבוטח לא מעוניין לתקן את רכבו: <span style="background:
 yellow;mso-highlight:yellow">2250</span> ₪<br>
@@ -619,11 +619,11 @@ mso-hansi-theme-font:minor-latin;mso-bidi-theme-font:minor-bidi;color:#00B050">�
 במצב כזה לשלוח מייל למנהל/ת המוקד לדאוג למבוטח לרכב חלופי מול חברת דרכים.</span><span dir="LTR" style="color:#00B050"><o:p></o:p></span></p><p class="MsoNormal" dir="RTL"><span dir="LTR" style="color:#00B050"><o:p>&nbsp;</o:p></span></p><p class="MsoNormal" dir="RTL" style="margin-right:18.0pt"><b><u><span lang="HE" style="font-size:16.0pt;line-height:115%;font-family:&quot;Arial&quot;,sans-serif;
 mso-ascii-font-family:Calibri;mso-ascii-theme-font:minor-latin;mso-hansi-font-family:
 Calibri;mso-hansi-theme-font:minor-latin;mso-bidi-theme-font:minor-bidi">פוליסת
-<span style="background:none;mso-highlight:none">צד ג</span> - אחריות
+<span style="background:yellow;mso-highlight:yellow">צד ג</span> - אחריות
 מבוטחנו – <span style="color:#7030A0">נוהל פגעתי</span><o:p></o:p></span></u></b></p><p class="MsoNormal" dir="RTL"><span lang="HE" style="font-family:&quot;Arial&quot;,sans-serif;
 mso-ascii-font-family:Calibri;mso-ascii-theme-font:minor-latin;mso-hansi-font-family:
 Calibri;mso-hansi-theme-font:minor-latin;mso-bidi-theme-font:minor-bidi;
-background:none;mso-highlight:none">פוליסת <b>צ'יק ליברה </b>-</span><span lang="HE" style="font-family:&quot;Arial&quot;,sans-serif;mso-ascii-font-family:Calibri;
+background:yellow;mso-highlight:yellow">פוליסת <b>צ'יק ליברה </b>-</span><span lang="HE" style="font-family:&quot;Arial&quot;,sans-serif;mso-ascii-font-family:Calibri;
 mso-ascii-theme-font:minor-latin;mso-hansi-font-family:Calibri;mso-hansi-theme-font:
 minor-latin;mso-bidi-theme-font:minor-bidi"> <o:p></o:p></span></p><p class="MsoListParagraphCxSpFirst" dir="RTL" style="text-indent:-18.0pt;
 mso-list:l3 level1 lfo3"><!--[if !supportLists]-->1.<span style="font-variant-numeric: normal; font-variant-east-asian: normal; font-variant-alternates: normal; font-size-adjust: none; font-language-override: normal; font-kerning: auto; font-optical-sizing: auto; font-feature-settings: normal; font-variation-settings: normal; font-variant-position: normal; font-variant-emoji: normal; font-stretch: normal; font-size: 7pt; line-height: normal; font-family: &quot;Times New Roman&quot;;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><!--[endif]--><span dir="RTL"></span><span lang="HE" style="font-family:&quot;Arial&quot;,sans-serif;mso-ascii-font-family:
@@ -663,13 +663,13 @@ mso-hansi-theme-font:minor-latin;mso-bidi-theme-font:minor-bidi">נעדכן מב
 ליברה:</u></span><span dir="LTR"></span><span dir="LTR"></span><u><span lang="HE" dir="LTR"><span dir="LTR"></span><span dir="LTR"></span> </span></u><span dir="RTL"></span><span dir="RTL"></span><u><span lang="HE" style="font-family:&quot;Arial&quot;,sans-serif;
 mso-ascii-font-family:Calibri;mso-ascii-theme-font:minor-latin;mso-hansi-font-family:
 Calibri;mso-hansi-theme-font:minor-latin;mso-bidi-theme-font:minor-bidi;
-background:none;mso-highlight:none"><span dir="RTL"></span><span dir="RTL"></span>1500</span></u><u><span lang="HE" style="font-family:&quot;Arial&quot;,sans-serif;mso-ascii-font-family:Calibri;
+background:yellow;mso-highlight:yellow"><span dir="RTL"></span><span dir="RTL"></span>1500</span></u><u><span lang="HE" style="font-family:&quot;Arial&quot;,sans-serif;mso-ascii-font-family:Calibri;
 mso-ascii-theme-font:minor-latin;mso-hansi-font-family:Calibri;mso-hansi-theme-font:
 minor-latin;mso-bidi-theme-font:minor-bidi"> ₪.<br>
-- במידה וצד ג' תיקן את הרכב במוסך פרטי והגיש לנו דרישה רגילה: <span style="background:none;mso-highlight:none">2250</span> ₪.</span></u><u><span dir="LTR"><o:p></o:p></span></u></p><p class="MsoNormal" dir="RTL"><span lang="HE" style="font-family:&quot;Arial&quot;,sans-serif;
+- במידה וצד ג' תיקן את הרכב במוסך פרטי והגיש לנו דרישה רגילה: <span style="background:yellow;mso-highlight:yellow">2250</span> ₪.</span></u><u><span dir="LTR"><o:p></o:p></span></u></p><p class="MsoNormal" dir="RTL"><span lang="HE" style="font-family:&quot;Arial&quot;,sans-serif;
 mso-ascii-font-family:Calibri;mso-ascii-theme-font:minor-latin;mso-hansi-font-family:
 Calibri;mso-hansi-theme-font:minor-latin;mso-bidi-theme-font:minor-bidi;
-background:none;mso-highlight:none">פוליסת <b>צ'יק צ'יק </b>–</span><span lang="HE" style="font-family:&quot;Arial&quot;,sans-serif;mso-ascii-font-family:Calibri;
+background:yellow;mso-highlight:yellow">פוליסת <b>צ'יק צ'יק </b>–</span><span lang="HE" style="font-family:&quot;Arial&quot;,sans-serif;mso-ascii-font-family:Calibri;
 mso-ascii-theme-font:minor-latin;mso-hansi-font-family:Calibri;mso-hansi-theme-font:
 minor-latin;mso-bidi-theme-font:minor-bidi"> <u><o:p></o:p></u></span></p><p class="MsoListParagraphCxSpFirst" dir="RTL" style="text-indent:-18.0pt;
 mso-list:l0 level1 lfo4"><!--[if !supportLists]-->1.<span style="font-variant-numeric: normal; font-variant-east-asian: normal; font-variant-alternates: normal; font-size-adjust: none; font-language-override: normal; font-kerning: auto; font-optical-sizing: auto; font-feature-settings: normal; font-variation-settings: normal; font-variant-position: normal; font-variant-emoji: normal; font-stretch: normal; font-size: 7pt; line-height: normal; font-family: &quot;Times New Roman&quot;;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><!--[endif]--><span dir="RTL"></span><span lang="HE" style="font-family:&quot;Arial&quot;,sans-serif;mso-ascii-font-family:
@@ -711,10 +711,10 @@ mso-hansi-theme-font:minor-latin;mso-bidi-theme-font:minor-bidi">נעדכן מב
 ליברה:</u></span><span dir="LTR"></span><span dir="LTR"></span><u><span lang="HE" dir="LTR"><span dir="LTR"></span><span dir="LTR"></span> </span></u><span dir="RTL"></span><span dir="RTL"></span><u><span lang="HE" style="font-family:&quot;Arial&quot;,sans-serif;
 mso-ascii-font-family:Calibri;mso-ascii-theme-font:minor-latin;mso-hansi-font-family:
 Calibri;mso-hansi-theme-font:minor-latin;mso-bidi-theme-font:minor-bidi;
-background:none;mso-highlight:none"><span dir="RTL"></span><span dir="RTL"></span>1500</span></u><u><span lang="HE" style="font-family:&quot;Arial&quot;,sans-serif;mso-ascii-font-family:Calibri;
+background:yellow;mso-highlight:yellow"><span dir="RTL"></span><span dir="RTL"></span>1500</span></u><u><span lang="HE" style="font-family:&quot;Arial&quot;,sans-serif;mso-ascii-font-family:Calibri;
 mso-ascii-theme-font:minor-latin;mso-hansi-font-family:Calibri;mso-hansi-theme-font:
 minor-latin;mso-bidi-theme-font:minor-bidi"> ₪.<br>
-- במידה וצד ג' תיקן את הרכב במוסך פרטי והגיש לנו דרישה רגילה: <span style="background:none;mso-highlight:none">2250</span> ₪.</span></u><u><span dir="LTR"><o:p></o:p></span></u></p><p class="MsoNormal" dir="RTL"><u><span lang="HE" style="font-family:&quot;Arial&quot;,sans-serif;
+- במידה וצד ג' תיקן את הרכב במוסך פרטי והגיש לנו דרישה רגילה: <span style="background:yellow;mso-highlight:yellow">2250</span> ₪.</span></u><u><span dir="LTR"><o:p></o:p></span></u></p><p class="MsoNormal" dir="RTL"><u><span lang="HE" style="font-family:&quot;Arial&quot;,sans-serif;
 mso-ascii-font-family:Calibri;mso-ascii-theme-font:minor-latin;mso-hansi-font-family:
 Calibri;mso-hansi-theme-font:minor-latin;mso-bidi-theme-font:minor-bidi">&nbsp;</span></u></p><p class="MsoNormal" dir="RTL"><b><u><span lang="HE" style="font-size:16.0pt;
 line-height:115%;font-family:&quot;Arial&quot;,sans-serif;mso-ascii-font-family:Calibri;
@@ -723,7 +723,7 @@ minor-latin;mso-bidi-theme-font:minor-bidi">פוליסת <span style="background
 yellow;mso-highlight:yellow">צד ג+מקיף</span> – אחריות צד ג – <span style="color:#7030A0">נוהל נפגעתי</span> – דרישה בשם<o:p></o:p></span></u></b></p><p class="MsoNormal" dir="RTL"><span lang="HE" style="font-family:&quot;Arial&quot;,sans-serif;
 mso-ascii-font-family:Calibri;mso-ascii-theme-font:minor-latin;mso-hansi-font-family:
 Calibri;mso-hansi-theme-font:minor-latin;mso-bidi-theme-font:minor-bidi;
-background:none;mso-highlight:none">פוליסת <b>צ'יק ליברה + צ'יק צ'יק </b>-</span><span lang="HE" style="font-family:&quot;Arial&quot;,sans-serif;mso-ascii-font-family:Calibri;
+background:yellow;mso-highlight:yellow">פוליסת <b>צ'יק ליברה + צ'יק צ'יק </b>-</span><span lang="HE" style="font-family:&quot;Arial&quot;,sans-serif;mso-ascii-font-family:Calibri;
 mso-ascii-theme-font:minor-latin;mso-hansi-font-family:Calibri;mso-hansi-theme-font:
 minor-latin;mso-bidi-theme-font:minor-bidi"> <o:p></o:p></span></p><p class="MsoListParagraphCxSpFirst" dir="RTL" style="text-indent:-18.0pt;
 mso-list:l4 level1 lfo5"><!--[if !supportLists]-->1.<span style="font-variant-numeric: normal; font-variant-east-asian: normal; font-variant-alternates: normal; font-size-adjust: none; font-language-override: normal; font-kerning: auto; font-optical-sizing: auto; font-feature-settings: normal; font-variation-settings: normal; font-variant-position: normal; font-variant-emoji: normal; font-stretch: normal; font-size: 7pt; line-height: normal; font-family: &quot;Times New Roman&quot;;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><!--[endif]--><span dir="RTL"></span><span lang="HE" style="font-family:&quot;Arial&quot;,sans-serif;mso-ascii-font-family:
@@ -856,11 +856,11 @@ mso-list:l4 level1 lfo5"><!--[if !supportLists]--><b><span style="mso-bidi-font-
 Calibri;mso-bidi-theme-font:minor-latin;color:#EE0000">7.<span style="font-variant-numeric: normal; font-variant-east-asian: normal; font-variant-alternates: normal; font-size-adjust: none; font-language-override: normal; font-kerning: auto; font-optical-sizing: auto; font-feature-settings: normal; font-variation-settings: normal; font-variant-position: normal; font-variant-emoji: normal; font-weight: normal; font-stretch: normal; font-size: 7pt; line-height: normal; font-family: &quot;Times New Roman&quot;;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span></b><!--[endif]--><span dir="RTL"></span><b><span lang="HE" style="font-family:&quot;Arial&quot;,sans-serif;mso-ascii-font-family:Calibri;mso-ascii-theme-font:
 minor-latin;mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin;
-mso-bidi-theme-font:minor-bidi;color:#EE0000">חשוב: במידה ורכב המבוטח הוכרז <span style="background:none;mso-highlight:none">לא לתיקון (אובדן)</span> ורוצה
+mso-bidi-theme-font:minor-bidi;color:#EE0000">חשוב: במידה ורכב המבוטח הוכרז <span style="background:yellow;mso-highlight:yellow">לא לתיקון (אובדן)</span> ורוצה
 לקבל רכב חלופי:<br>
-<span style="background:none;mso-highlight:none">צ'יק ליברה –</span> ניתן
+<span style="background:yellow;mso-highlight:yellow">צ'יק ליברה –</span> ניתן
 ישר לבצע הפניה לאחר אישור משמאי כי הרכב לא לתיקון.<br>
-<span style="background:none;mso-highlight:none">צ'יק צ'יק –</span> לבקש את
+<span style="background:yellow;mso-highlight:yellow">צ'יק צ'יק –</span> לבקש את
 המסמכים (כמו בהפעלה) ואנו נבצע את אותה בדיקת חבות שעורכת עד 7 ימים מקבלת כל
 המסמכים על מנת לאשר רכב חלופי לטוטאל במסגרת הליך דרישה בשם.</span></b><b><span dir="LTR" style="color:#EE0000"><o:p></o:p></span></b></p></div></details>
 <details id="s44" data-cat="car"><summary><span style="font-weight:700">צ'יק השתתפות עצמית</span></summary><div class="body" contenteditable="false"><div class="edit-toolbar" style="display: none;"><button onclick="execCmd(this, 'bold')">B</button><button onclick="execCmd(this, 'italic')">I</button><button onclick="execCmd(this, 'underline')">U</button><input type="color" onchange="execCmd(this, 'foreColor', this.value)"></div><p><u><b>פוליסת מקיף צ'יק ליברה –</b></u></p>
@@ -1557,7 +1557,7 @@ Calibri;mso-hansi-theme-font:minor-latin;mso-bidi-theme-font:minor-bidi">במק�
 הדרישה כולה רשאי לבחור באופציות הבאות:<o:p></o:p></span></p><p class="MsoNormal" dir="RTL"><span lang="HE" style="font-family:&quot;Arial&quot;,sans-serif;
 mso-ascii-font-family:Calibri;mso-ascii-theme-font:minor-latin;mso-hansi-font-family:
 Calibri;mso-hansi-theme-font:minor-latin;mso-bidi-theme-font:minor-bidi;
-background:none;mso-highlight:none">פוליסת ביטוח מקיף -</span><span lang="HE" style="font-family:&quot;Arial&quot;,sans-serif;mso-ascii-font-family:Calibri;
+background:yellow;mso-highlight:yellow">פוליסת ביטוח מקיף -</span><span lang="HE" style="font-family:&quot;Arial&quot;,sans-serif;mso-ascii-font-family:Calibri;
 mso-ascii-theme-font:minor-latin;mso-hansi-font-family:Calibri;mso-hansi-theme-font:
 minor-latin;mso-bidi-theme-font:minor-bidi"> <o:p></o:p></span></p><p class="MsoListParagraphCxSpFirst" dir="RTL" style="text-indent:-18.0pt;
 mso-list:l1 level1 lfo1"><!--[if !supportLists]-->1.<span style="font-variant-numeric: normal; font-variant-east-asian: normal; font-variant-alternates: normal; font-size-adjust: none; font-language-override: normal; font-kerning: auto; font-optical-sizing: auto; font-feature-settings: normal; font-variation-settings: normal; font-variant-position: normal; font-variant-emoji: normal; font-stretch: normal; font-size: 7pt; line-height: normal; font-family: &quot;Times New Roman&quot;;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><!--[endif]--><span dir="RTL"></span><span lang="HE" style="font-family:&quot;Arial&quot;,sans-serif;mso-ascii-font-family:
@@ -1590,7 +1590,7 @@ mso-themecolor:text1">מבוטח יכול לקבל את ההצעה של חברת
 לסיים את התיק.</span><span dir="LTR"><o:p></o:p></span></p><p class="MsoNormal" dir="RTL"><span lang="HE" style="font-family:&quot;Arial&quot;,sans-serif;
 mso-ascii-font-family:Calibri;mso-ascii-theme-font:minor-latin;mso-hansi-font-family:
 Calibri;mso-hansi-theme-font:minor-latin;mso-bidi-theme-font:minor-bidi;
-background:none;mso-highlight:none">פוליסת ביטוח צד ג –</span><span lang="HE" style="font-family:&quot;Arial&quot;,sans-serif;mso-ascii-font-family:Calibri;
+background:yellow;mso-highlight:yellow">פוליסת ביטוח צד ג –</span><span lang="HE" style="font-family:&quot;Arial&quot;,sans-serif;mso-ascii-font-family:Calibri;
 mso-ascii-theme-font:minor-latin;mso-hansi-font-family:Calibri;mso-hansi-theme-font:
 minor-latin;mso-bidi-theme-font:minor-bidi"><o:p></o:p></span></p><p class="MsoListParagraphCxSpFirst" dir="RTL" style="text-indent:-18.0pt;
 mso-list:l0 level1 lfo2"><!--[if !supportLists]-->1.<span style="font-variant-numeric: normal; font-variant-east-asian: normal; font-variant-alternates: normal; font-size-adjust: none; font-language-override: normal; font-kerning: auto; font-optical-sizing: auto; font-feature-settings: normal; font-variation-settings: normal; font-variant-position: normal; font-variant-emoji: normal; font-stretch: normal; font-size: 7pt; line-height: normal; font-family: &quot;Times New Roman&quot;;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><!--[endif]--><span dir="RTL"></span><span lang="HE" style="font-family:&quot;Arial&quot;,sans-serif;mso-ascii-font-family:
@@ -1805,7 +1805,7 @@ Calibri;mso-hansi-theme-font:minor-latin;mso-bidi-theme-font:minor-bidi">כאש�
 אותו בצורה הזו.<o:p></o:p></span></p><p class="MsoNormal" dir="RTL"><u><span lang="HE" style="font-family:&quot;Arial&quot;,sans-serif;
 mso-ascii-font-family:Calibri;mso-ascii-theme-font:minor-latin;mso-hansi-font-family:
 Calibri;mso-hansi-theme-font:minor-latin;mso-bidi-theme-font:minor-bidi;
-background:none;mso-highlight:none">במידה <b>ומבוטח לא תיקן</b> את רכבו
+background:yellow;mso-highlight:yellow">במידה <b>ומבוטח לא תיקן</b> את רכבו
 בגין תאונה זו –</span></u><u><span lang="HE" style="font-family:&quot;Arial&quot;,sans-serif;
 mso-ascii-font-family:Calibri;mso-ascii-theme-font:minor-latin;mso-hansi-font-family:
 Calibri;mso-hansi-theme-font:minor-latin;mso-bidi-theme-font:minor-bidi"> <o:p></o:p></span></u></p><p class="MsoListParagraphCxSpFirst" dir="RTL" style="text-indent:-18.0pt;
@@ -1838,7 +1838,7 @@ minor-latin;mso-bidi-theme-font:minor-bidi">נסביר למבוטח כי יש ל
 גם את רכבו ולהוסיף תביעה שכנגד להליך המשפטי.</span><span dir="LTR"><o:p></o:p></span></p><p class="MsoNormal" dir="RTL"><u><span lang="HE" style="font-family:&quot;Arial&quot;,sans-serif;
 mso-ascii-font-family:Calibri;mso-ascii-theme-font:minor-latin;mso-hansi-font-family:
 Calibri;mso-hansi-theme-font:minor-latin;mso-bidi-theme-font:minor-bidi;
-background:none;mso-highlight:none">במידה <b>ומבוטח תיקן</b> את רכבו בגין
+background:yellow;mso-highlight:yellow">במידה <b>ומבוטח תיקן</b> את רכבו בגין
 תאונה זו –</span></u><u><span lang="HE" style="font-family:&quot;Arial&quot;,sans-serif;
 mso-ascii-font-family:Calibri;mso-ascii-theme-font:minor-latin;mso-hansi-font-family:
 Calibri;mso-hansi-theme-font:minor-latin;mso-bidi-theme-font:minor-bidi"><o:p></o:p></span></u></p><p class="MsoNormal" dir="RTL"><b><u><span lang="HE" style="font-family:&quot;Arial&quot;,sans-serif;
