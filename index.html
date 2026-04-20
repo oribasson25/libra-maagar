@@ -223,6 +223,18 @@ mark{background:#ffd703;color:#1c1c1c;padding:0.05rem 0.2rem;border-radius:0.15r
   }
   // initialize full view under default category
   selectCategory(currentCategory);
+  function addEditButtons(){
+    document.querySelectorAll('details').forEach(function(d){
+      var body = d.querySelector('.body');
+      if(body && !body.querySelector('.edit-btn')){
+        var btn = document.createElement('button');
+        btn.className = 'edit-btn';
+        btn.textContent = 'ערוך';
+        btn.onclick = function(){ toggleEdit(this); };
+        body.appendChild(btn);
+      }
+    });
+  }
   window.addEventListener('load', function(){
     document.querySelectorAll('details').forEach(function(d){
       var saved = localStorage.getItem(d.id);
@@ -230,6 +242,7 @@ mark{background:#ffd703;color:#1c1c1c;padding:0.05rem 0.2rem;border-radius:0.15r
         d.querySelector('.body').innerHTML = saved;
       }
     });
+    addEditButtons();
   });
   var EDIT_PASSWORD = 'libra2024';
   var editUnlocked = false;
@@ -269,8 +282,11 @@ mark{background:#ffd703;color:#1c1c1c;padding:0.05rem 0.2rem;border-radius:0.15r
       body.contentEditable = 'false';
       toolbar.style.display = 'none';
       btn.textContent = 'ערוך';
-      // שמור ב-localStorage
+      // שמור ב-localStorage ללא כפתור העריכה
+      var editBtn = body.querySelector('.edit-btn');
+      if(editBtn) editBtn.remove();
       localStorage.setItem(details.id, body.innerHTML);
+      body.appendChild(btn);
       // שמור לקובץ אם נבחרה תיקייה
       saveToFile();
     } else {
